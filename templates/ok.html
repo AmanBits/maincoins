@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Coin Detail</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/vendors/feather/feather.css" />
+    <link
+      rel="stylesheet"
+      href="/vendors/mdi/css/materialdesignicons.min.css"
+    />
+    <link rel="stylesheet" href="/vendors/ti-icons/css/themify-icons.css" />
+    <link rel="stylesheet" href="/vendors/typicons/typicons.css" />
+    <link
+      rel="stylesheet"
+      href="/vendors/simple-line-icons/css/simple-line-icons.css"
+    />
+    <link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js" />
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link
+      rel="stylesheet"
+      href="/vendors/datatables.net-bs4/dataTables.bootstrap4.css"
+    />
+    <link rel="stylesheet" href="/js/select.dataTables.min.css" />
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/vertical-layout-light/style.css" />
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav
+        class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row"
+      >
+        <div
+          class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start"
+        >
+          <div class="me-3">
+            <button
+              class="navbar-toggler navbar-toggler align-self-center"
+              type="button"
+              data-bs-toggle="minimize"
+            >
+              <span class="icon-menu"></span>
+            </button>
+          </div>
+          <div>
+            <a class="navbar-brand brand-logo" href="index.html">
+              <span>CoinHub</span>
+              <!-- <img src="images/logo.svg" alt="logo" /> -->
+            </a>
+            <a class="navbar-brand brand-logo-mini" href="index.html">
+              <img src="/images/logo-mini.svg" alt="logo" />
+            </a>
+          </div>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-top">
+          <ul class="navbar-nav">
+            <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
+              <h1 class="welcome-text">
+                <span class="text-black fw-bold" id="cn_name">
+                  {{%CONTENT%}}</span
+                >
+                <p class="text-muted pt-2">{{%DESCRIPTION%}}</p>
+              </h1>
+              <h3 class="welcome-sub-text">
+                <!-- Your performance summary this week -->
+              </h3>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link count-indicator"
+                id="countDropdown"
+                href="#"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="icon-bell"></i>
+                <span class="count"></span>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
+                aria-labelledby="countDropdown"
+              >
+                <a class="dropdown-item py-3">
+                  <p class="mb-0 font-weight-medium float-left">
+                    You have 7 unread mails
+                  </p>
+                  <span class="badge badge-pill badge-primary float-right"
+                    >View all</span
+                  >
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img
+                      src="images/faces/face10.jpg"
+                      alt="image"
+                      class="img-sm profile-pic"
+                    />
+                  </div>
+                  <div class="preview-item-content flex-grow py-2">
+                    <p
+                      class="preview-subject ellipsis font-weight-medium text-dark"
+                    >
+                      Marian Garner
+                    </p>
+                    <p class="fw-light small-text mb-0">
+                      The meeting is cancelled
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img
+                      src="/images/faces/face12.jpg"
+                      alt="image"
+                      class="img-sm profile-pic"
+                    />
+                  </div>
+                  <div class="preview-item-content flex-grow py-2">
+                    <p
+                      class="preview-subject ellipsis font-weight-medium text-dark"
+                    >
+                      David Grey
+                    </p>
+                    <p class="fw-light small-text mb-0">
+                      The meeting is cancelled
+                    </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img
+                      src="images/faces/face1.jpg"
+                      alt="image"
+                      class="img-sm profile-pic"
+                    />
+                  </div>
+                  <div class="preview-item-content flex-grow py-2">
+                    <p
+                      class="preview-subject ellipsis font-weight-medium text-dark"
+                    >
+                      Travis Jenkins
+                    </p>
+                    <p class="fw-light small-text mb-0">
+                      The meeting is cancelled
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+              <a
+                class="nav-link"
+                id="UserDropdown"
+                href="#"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  class="img-xs rounded-circle"
+                  src="/images/faces/face8.jpg"
+                  alt="Profile image"
+                />
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                aria-labelledby="UserDropdown"
+              >
+                <div class="dropdown-header text-center">
+                  <img
+                    class="img-md rounded-circle"
+                    src="images/faces/face8.jpg"
+                    alt="Profile image"
+                  />
+                  <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
+                  <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
+                </div>
+                <a class="dropdown-item"
+                  ><i
+                    class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"
+                  ></i>
+                  My Profile
+                  <span class="badge badge-pill badge-danger">1</span></a
+                >
+                <a class="dropdown-item"
+                  ><i
+                    class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"
+                  ></i>
+                  Messages</a
+                >
+                <a class="dropdown-item"
+                  ><i
+                    class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"
+                  ></i>
+                  Activity</a
+                >
+                <a class="dropdown-item"
+                  ><i
+                    class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"
+                  ></i>
+                  FAQ</a
+                >
+                <a class="dropdown-item" href="/logout"
+                  ><i
+                    class="dropdown-item-icon mdi mdi-power text-primary me-2"
+                  ></i
+                  >Sign Out</a
+                >
+              </div>
+            </li>
+          </ul>
+          <button
+            class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button"
+            data-bs-toggle="offcanvas"
+          >
+            <span class="mdi mdi-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_settings-panel.html -->
+        <div class="theme-setting-wrapper">
+          <div id="settings-trigger"><i class="ti-settings"></i></div>
+          <div id="theme-settings" class="settings-panel">
+            <i class="settings-close ti-close"></i>
+            <p class="settings-heading">SIDEBAR SKINS</p>
+            <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+              <div class="img-ss rounded-circle bg-light border me-3"></div>
+              Light
+            </div>
+            <div class="sidebar-bg-options" id="sidebar-dark-theme">
+              <div class="img-ss rounded-circle bg-dark border me-3"></div>
+              Dark
+            </div>
+            <p class="settings-heading mt-2">HEADER SKINS</p>
+            <div class="color-tiles mx-0 px-4">
+              <div class="tiles success"></div>
+              <div class="tiles warning"></div>
+              <div class="tiles danger"></div>
+              <div class="tiles info"></div>
+              <div class="tiles dark"></div>
+              <div class="tiles default"></div>
+            </div>
+          </div>
+        </div>
+        <div id="popupForm" class="popup">
+          <form id="myForm">
+            <label for="amount">Amount:</label><br />
+            <input type="number" id="amount" name="amount" required /><br />
+            <!-- <label for="binanceId">Binance ID:</label><br />
+            <input
+              type="text"
+              id="binanceId"
+              name="binanceId"
+              required
+            /><br /><br /> -->
+            <button type="submit">Submit</button>
+            <button id="closePopup" type="button">Close</button>
+          </form>
+        </div>
+
+        <div id="right-sidebar" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="todo-tab"
+                data-bs-toggle="tab"
+                href="#todo-section"
+                role="tab"
+                aria-controls="todo-section"
+                aria-expanded="true"
+                >TO DO LIST</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="chats-tab"
+                data-bs-toggle="tab"
+                href="#chats-section"
+                role="tab"
+                aria-controls="chats-section"
+                >CHATS</a
+              >
+            </li>
+          </ul>
+          <div class="tab-content" id="setting-content">
+            <div
+              class="tab-pane fade show active scroll-wrapper"
+              id="todo-section"
+              role="tabpanel"
+              aria-labelledby="todo-section"
+            >
+              <div class="add-items d-flex px-3 mb-0">
+                <form class="form w-100">
+                  <div class="form-group d-flex">
+                    <input
+                      type="text"
+                      class="form-control todo-list-input"
+                      placeholder="Add To-do"
+                    />
+                    <button
+                      type="submit"
+                      class="add btn btn-primary todo-list-add-btn"
+                      id="add-task"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="list-wrapper px-3">
+                <ul class="d-flex flex-column-reverse todo-list">
+                  <li>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="checkbox" type="checkbox" />
+                        Team review meeting at 3.00 PM
+                      </label>
+                    </div>
+                    <i class="remove ti-close"></i>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="checkbox" type="checkbox" />
+                        Prepare for presentation
+                      </label>
+                    </div>
+                    <i class="remove ti-close"></i>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="checkbox" type="checkbox" />
+                        Resolve all the low priority tickets due today
+                      </label>
+                    </div>
+                    <i class="remove ti-close"></i>
+                  </li>
+                  <li class="completed">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="checkbox" type="checkbox" checked />
+                        Schedule meeting for next week
+                      </label>
+                    </div>
+                    <i class="remove ti-close"></i>
+                  </li>
+                  <li class="completed">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input class="checkbox" type="checkbox" checked />
+                        Project review
+                      </label>
+                    </div>
+                    <i class="remove ti-close"></i>
+                  </li>
+                </ul>
+              </div>
+              <h4 class="px-3 text-muted mt-5 fw-light mb-0">Events</h4>
+              <div class="events pt-4 px-3">
+                <div class="wrapper d-flex mb-2">
+                  <i class="ti-control-record text-primary me-2"></i>
+                  <span>Feb 11 2018</span>
+                </div>
+                <p class="mb-0 font-weight-thin text-gray">
+                  Creating component page build a js
+                </p>
+                <p class="text-gray mb-0">The total number of sessions</p>
+              </div>
+              <div class="events pt-4 px-3">
+                <div class="wrapper d-flex mb-2">
+                  <i class="ti-control-record text-primary me-2"></i>
+                  <span>Feb 7 2018</span>
+                </div>
+                <p class="mb-0 font-weight-thin text-gray">
+                  Meeting with Alisa
+                </p>
+                <p class="text-gray mb-0">Call Sarah Graves</p>
+              </div>
+            </div>
+            <!-- To do section tab ends -->
+            <div
+              class="tab-pane fade"
+              id="chats-section"
+              role="tabpanel"
+              aria-labelledby="chats-section"
+            >
+              <div
+                class="d-flex align-items-center justify-content-between border-bottom"
+              >
+                <p
+                  class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0"
+                >
+                  Friends
+                </p>
+                <small
+                  class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 fw-normal"
+                  >See All</small
+                >
+              </div>
+              <ul class="chat-list">
+                <li class="list active">
+                  <div class="profile">
+                    <img src="images/faces/face1.jpg" alt="image" /><span
+                      class="online"
+                    ></span>
+                  </div>
+                  <div class="info">
+                    <p>Thomas Douglas</p>
+                    <p>Available</p>
+                  </div>
+                  <small class="text-muted my-auto">19 min</small>
+                </li>
+                <li class="list">
+                  <div class="profile">
+                    <img src="images/faces/face2.jpg" alt="image" /><span
+                      class="offline"
+                    ></span>
+                  </div>
+                  <div class="info">
+                    <div class="wrapper d-flex">
+                      <p>Catherine</p>
+                    </div>
+                    <p>Away</p>
+                  </div>
+                  <div class="badge badge-success badge-pill my-auto mx-2">
+                    4
+                  </div>
+                  <small class="text-muted my-auto">23 min</small>
+                </li>
+                <li class="list">
+                  <div class="profile">
+                    <img src="images/faces/face3.jpg" alt="image" /><span
+                      class="online"
+                    ></span>
+                  </div>
+                  <div class="info">
+                    <p>Daniel Russell</p>
+                    <p>Available</p>
+                  </div>
+                  <small class="text-muted my-auto">14 min</small>
+                </li>
+                <li class="list">
+                  <div class="profile">
+                    <img src="images/faces/face4.jpg" alt="image" /><span
+                      class="offline"
+                    ></span>
+                  </div>
+                  <div class="info">
+                    <p>James Richardson</p>
+                    <p>Away</p>
+                  </div>
+                  <small class="text-muted my-auto">2 min</small>
+                </li>
+                <li class="list">
+                  <div class="profile">
+                    <img src="images/faces/face5.jpg" alt="image" /><span
+                      class="online"
+                    ></span>
+                  </div>
+                  <div class="info">
+                    <p>Madeline Kennedy</p>
+                    <p>Available</p>
+                  </div>
+                  <small class="text-muted my-auto">5 min</small>
+                </li>
+                <li class="list">
+                  <div class="profile">
+                    <img src="images/faces/face6.jpg" alt="image" /><span
+                      class="online"
+                    ></span>
+                  </div>
+                  <div class="info">
+                    <p>Sarah Graves</p>
+                    <p>Available</p>
+                  </div>
+                  <small class="text-muted my-auto">47 min</small>
+                </li>
+              </ul>
+            </div>
+            <!-- chat tab ends -->
+          </div>
+        </div>
+        <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item nav-category">UI Elements</li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="collapse"
+                href="#icons"
+                aria-expanded="false"
+                aria-controls="icons"
+              >
+                <i class="menu-icon mdi mdi-layers-outline"></i>
+                <span class="menu-title">Icons</span>
+                <i class="menu-arrow"></i>
+              </a>
+              <div class="collapse" id="icons">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/icons/mdi.html"
+                      >Mdi icons</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="home-tab">
+                  <div
+                    class="d-sm-flex align-items-center justify-content-between border-bottom"
+                  >
+                    <ul class="nav nav-tabs" role="tablist">
+                      <li class="nav-item">
+                        <a
+                          class="nav-link active ps-0"
+                          id="home-tab"
+                          data-bs-toggle="tab"
+                          href="#overview"
+                          role="tab"
+                          aria-controls="overview"
+                          aria-selected="true"
+                          >Overview</a
+                        >
+                      </li>
+                    </ul>
+                    <div>
+                      <div class="btn-wrapper"></div>
+                    </div>
+                  </div>
+                  <div class="tab-content tab-content-basic">
+                    <div
+                      class="tab-pane fade show active"
+                      id="overview"
+                      role="tabpanel"
+                      aria-labelledby="overview"
+                    >
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div
+                            class="statistics-details d-flex align-items-center justify-content-between"
+                          >
+                            <div class="wallet-box">
+                              <img
+                                src="/images/wallet.png"
+                                alt="Wallet Icon"
+                                width="30px"
+                                height="30px"
+                              />
+                              <div class="wallet-info">
+                                <p class="statistics-title">Wallet Amount</p>
+                                <h3 class="rate-percentage">{{%AMOUNT%}}</h3>
+                              </div>
+                            </div>
+
+                            <div>
+                              <p class="statistics-title">Coin Invest</p>
+                              <h3 class="rate-percentage">
+                                {{%INVEST_AMOUNT%}}
+                              </h3>
+                              <span id="invest_amount" hidden
+                                >{{%INVEST%}}</span
+                              >
+
+                              <p class="text-success d-flex">
+                                <!-- <span>+0.1%</span> -->
+                              </p>
+                            </div>
+                            <div>
+                              <p class="statistics-title">Progress</p>
+                              <h3 class="rate-percentage">68.8</h3>
+                              <p class="text-danger d-flex">
+                                <i class="mdi mdi-menu-down"></i
+                                ><span>68.8</span>
+                              </p>
+                            </div>
+
+                            <!-- <div class="d-none d-md-block">
+                            <p class="statistics-title">Avg. Time on Site</p>
+                            <h3 class="rate-percentage">2m:35s</h3>
+                            <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
+                          </div> -->
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="row">
+                      <div class="col-lg-8 d-flex flex-column">
+                        <div class="row flex-grow">
+                          <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="d-sm-flex justify-content-between align-items-start">
+                                  <div>
+                                   <h4 class="card-title card-title-dash">Performance Line Chart</h4>
+                                   <h5 class="card-subtitle card-subtitle-dash">Lorem Ipsum is simply dummy text of the printing</h5>
+                                  </div>
+                                  <div id="performance-line-legend"></div>
+                                </div>
+                                <div class="chartjs-wrapper mt-5">
+                                  <canvas id="performaneLine"></canvas>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 d-flex flex-column">
+                        <div class="row flex-grow">
+                          <div class="col-md-6 col-lg-12 grid-margin stretch-card">
+                            <div class="card bg-primary card-rounded">
+                              <div class="card-body pb-0">
+                                <h4 class="card-title card-title-dash text-white mb-4">Status Summary</h4>
+                                <div class="row">
+                                  <div class="col-sm-4">
+                                    <p class="status-summary-ight-white mb-1">Closed Value</p>
+                                    <h2 class="text-info">357</h2>
+                                  </div>
+                                  <div class="col-sm-8">
+                                    <div class="status-summary-chart-wrapper pb-4">
+                                      <canvas id="status-summary"></canvas>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-6 col-lg-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="row">
+                                  <div class="col-sm-6">
+                                    <div class="d-flex justify-content-between align-items-center mb-2 mb-sm-0">
+                                      <div class="circle-progress-width">
+                                        <div id="totalVisitors" class="progressbar-js-circle pr-2"></div>
+                                      </div>
+                                      <div>
+                                        <p class="text-small mb-2">Total Visitors</p>
+                                        <h4 class="mb-0 fw-bold">26.80%</h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-6">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                      <div class="circle-progress-width">
+                                        <div id="visitperday" class="progressbar-js-circle pr-2"></div>
+                                      </div>
+                                      <div>
+                                        <p class="text-small mb-2">Visits per day</p>
+                                        <h4 class="mb-0 fw-bold">9065</h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                      <div class="row">
+                        <div class="col-lg-8 d-flex flex-column">
+                          <div class="row flex-grow">
+                            <div class="col-12 grid-margin stretch-card">
+                              <div class="card card-rounded">
+                                <div class="card-body">
+                                  <div id="chart"></div>
+
+                                  <button
+                                    class="btn btn-success text-white"
+                                    id="openPopup"
+                                  >
+                                    DEPOSIT
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row flex-grow">
+                            <div
+                              class="col-md-12 col-lg-12 grid-margin stretch-card"
+                            >
+                              <div class="card card-rounded">
+                                <div class="card-body">
+                                  <h3>Market Stats</h3>
+                                  <div class="row">
+                                    <div class="col-4 p-3">
+                                      <h5>MARKET CAP</h5>
+                                      <p>{{%MARKET_CAP%}}</p>
+                                    </div>
+                                    <div class="col-4 p-3">
+                                      <h5>VOLUME (24H)</h5>
+                                      <p>{{%VOLUME%}}</p>
+                                    </div>
+                                    <div class="col-4 p-3">
+                                      <h5>CIRCULATING SUPPLY</h5>
+                                      <p>{{%CIRCULATING%}}</p>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 p-3">
+                                      <h5>Typical hold time</h5>
+                                      <p>12</p>
+                                    </div>
+                                    <div class="col-4 p-3">
+                                      <h5>Popularity</h5>
+                                      <p>#{{%RANK%}}</p>
+                                    </div>
+                                    <div class="col-4 p-3">
+                                      <h5>All time high</h5>
+                                      <p>{{%ALL_TIME_HIGH%}}</p>
+                                    </div>
+                                  </div>
+
+                                  <div class="row">
+                                    <div class="col-4 p-3" id="priceChange1H">
+                                      <h5>Price change (1H)</h5>
+                                      <p>{{%CHANGE%}}</p>
+                                    </div>
+                                    <!-- <div class="col-4 p-3">
+                                      <h5>Price change (24H)</h5>
+                                      <p>{{%CHANGE%}}</p>
+                                    </div>
+                                    <div class="col-4 p-3">
+                                      <h5>Price change (7D)</h5>
+                                      <p>{{%CHANGE%}}</p>
+                                    </div> -->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="col-md-6 col-lg-6 grid-margin stretch-card"
+                            >
+                              <div class="card card-rounded"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 d-flex flex-column">
+                          <div class="row flex-grow">
+                            <div class="col-12 grid-margin stretch-card">
+                              <div class="card card-rounded">
+                                <div class="card-body">
+                                  <div class="row">
+                                    <div class="col-lg-12">
+                                      <div
+                                        class="d-flex justify-content-between align-items-center mb-3"
+                                      >
+                                        <div>
+                                          <h4
+                                            class="card-title card-title-dash"
+                                          >
+                                            Top Performer coins
+                                          </h4>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="mt-3"
+                                        id="userContainer"
+                                      ></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row flex-grow">
+                            <div class="col-12 grid-margin stretch-card">
+                              <div class="card card-rounded">
+                                <div class="card-body">
+                                  <div class="row"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row flex-grow">
+                            <div class="col-12 grid-margin stretch-card">
+                              <div class="card card-rounded">
+                                <div class="card-body">
+                                  <div class="row">
+                                    <div class="col-lg-12"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row flex-grow">
+                            <div class="col-12 grid-margin stretch-card">
+                              <div class="card card-rounded">
+                                <div class="card-body">
+                                  <div class="row"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div
+              class="d-sm-flex justify-content-center justify-content-sm-between"
+            >
+              <span
+                class="text-muted text-center text-sm-left d-block d-sm-inline-block"
+                >Premium
+                <a href="https://www.bootstrapdash.com/" target="_blank"
+                  >Bootstrap admin template</a
+                >
+                from BootstrapDash.</span
+              >
+              <span
+                class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"
+                >Copyright © 2021. All rights reserved.</span
+              >
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="/vendors/chart.js/Chart.min.js"></script>
+    <script src="/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="/vendors/progressbar.js/progressbar.min.js"></script>
+
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="/js/off-canvas.js"></script>
+    <script src="/js/hoverable-collapse.js"></script>
+    <script src="/js/template.js"></script>
+    <script src="/js/settings.js"></script>
+    <script src="/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/Chart.roundedBarCharts.js"></script>
+    <script>
+      var currentUrl = window.location.href;
+
+      // Split the URL by '/'
+      var parts = currentUrl.split("/");
+
+      // Get the last part which is your desired value
+      var coinvalue = parts[parts.length - 1];
+
+      // Function to make a POST request
+      async function postData() {
+        const url = "/currentPrice"; // Replace with the URL for your POST endpoint
+        const data = {
+          coin: coinvalue,
+        }; // Replace with your POST data
+
+        try {
+          const response = await fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+          if (!response.ok) {
+            throw new Error("Failed to send POST request");
+          }
+          const responseData = await response.json();
+          console.log(responseData.data.coin.price);
+        } catch (error) {
+          console.error("Error sending POST request:", error.message);
+        }
+      }
+
+      // Function to be executed every minute
+      function myFunction() {
+        // Call the postData function to send the POST request
+        postData();
+      }
+
+      // Call myFunction immediately (optional)
+      myFunction();
+
+      // Set interval to execute myFunction every minute
+      setInterval(myFunction, 10000000); // 60 seconds * 1000 milliseconds
+
+      // Making a GET request to the API endpoint
+      fetch("/topCoins")
+        .then((response) => {
+          // Check if the response is successful
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          // Parse the JSON data returned by the API
+          return response.json();
+        })
+        .then((data) => {
+          // Process the data received from the API
+          console.log(data);
+          // Assuming 'data' is an array containing user information
+          data.data.coins.forEach((user) => {
+            // Create wrapper div for each user
+            const userWrapper = document.createElement("div");
+            userWrapper.classList.add(
+              "wrapper",
+              "d-flex",
+              "align-items-center",
+              "justify-content-between",
+              "py-2",
+              "border-bottom"
+            );
+
+            // Create div for user profile
+            const profileDiv = document.createElement("div");
+            profileDiv.classList.add("d-flex");
+
+            // Create image element for profile picture
+            const profileImg = document.createElement("img");
+            profileImg.classList.add("img-sm", "rounded-10");
+            profileImg.src = user.iconUrl;
+            profileImg.alt = "profile";
+
+            // Create div for user details
+            const userDetailsDiv = document.createElement("div");
+            userDetailsDiv.classList.add("wrapper", "ms-3");
+
+            // Create paragraph element for user name
+            const userName = document.createElement("p");
+            userName.classList.add("ms-1", "mb-1", "fw-bold");
+            userName.textContent = user.name;
+
+            // Create small element for user timestamp
+            const userTimestamp = document.createElement("small");
+            userTimestamp.classList.add("text-muted", "mb-0");
+            userTimestamp.textContent = user.change;
+
+            // Append user name and timestamp to userDetailsDiv
+            userDetailsDiv.appendChild(userName);
+            userDetailsDiv.appendChild(userTimestamp);
+
+            // Append profile picture and userDetailsDiv to profileDiv
+            profileDiv.appendChild(profileImg);
+            profileDiv.appendChild(userDetailsDiv);
+
+            // Create div for timestamp
+            const timestampDiv = document.createElement("div");
+            timestampDiv.classList.add("text-muted", "text-small");
+            timestampDiv.textContent = user.price;
+
+            // Append profileDiv and timestampDiv to userWrapper
+            userWrapper.appendChild(profileDiv);
+            userWrapper.appendChild(timestampDiv);
+
+            // Append userWrapper to a container element (assuming there's a container with id 'userContainer')
+            document.getElementById("userContainer").appendChild(userWrapper);
+          });
+        })
+        .catch((error) => {
+          // Handle any errors that occurred during the fetch
+          console.error("There was a problem with the fetch operation:", error);
+        });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to fetch coin history from Coinranking API
+        async function fetchCoinHistory(coinv, timeframe) {
+          const postData = {
+            coin: coinvalue,
+            time: timeframe,
+          };
+          try {
+            const response = await fetch(`/coinGraph`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json", // Specify the content type as JSON if sending JSON data
+              },
+              body: JSON.stringify(postData), // Convert the data to a JSON string
+            });
+            const data = await response.json();
+            console.log(data);
+            return data.data.history;
+          } catch (error) {
+            console.error("Error fetching coin history:", error);
+          }
+        }
+
+        // Function to calculate dates based on the duration in hours
+        function calculateDates(durationInHours) {
+          const currentDate = new Date(); // Get the current date
+          const millisecondsInHour = 3600 * 1000; // Number of milliseconds in an hour
+          const millisecondsInDay = 24 * millisecondsInHour; // Number of milliseconds in a day
+
+          // Calculate the number of days
+          const numberOfDays = Math.floor(durationInHours / 24);
+          // Calculate the remaining hours
+          const remainingHours = durationInHours % 24;
+
+          const dates = [];
+
+          // Loop to generate dates
+          for (let i = 0; i < numberOfDays; i++) {
+            const date = new Date(
+              currentDate.getTime() - i * millisecondsInDay
+            );
+            dates.push(date.toISOString().slice(0, 10)); // Push the date in YYYY-MM-DD format
+          }
+
+          // If there are remaining hours, add the current date
+          if (remainingHours > 0) {
+            dates.push(currentDate.toISOString().slice(0, 10));
+          }
+
+          return dates.reverse(); // Reverse the array to show dates in chronological order
+        }
+        // Function to update the chart based on selected interval
+        function updateChart(interval) {
+          const c_name = document.getElementById("cn_name").innerText;
+          fetchCoinHistory(coinvalue, "all").then((coinHistory) => {
+            // Extract timestamps and prices from coinHistory
+            const timestamps = coinHistory.map(
+              (entry) => new Date(entry.timestamp * 1000)
+            );
+
+            console.log(timestamps[0])
+
+            
+            const prices = coinHistory.map((entry) => entry.price);
+console.log(prices)
+            // Create trace for the chart
+            var trace1 = {
+              type: "scatter",
+              mode: "lines",
+              name: "Coin Price",
+              x: timestamps,
+              y: prices,
+              line: { color: "#17BECF" },
+            };
+
+            var data = [trace1];
+
+            var layout = {
+              title: c_name,
+              xaxis: {
+                autorange: true,
+                range: ['2015-02-17', '2017-02-16'],
+                rangeselector: {
+                  buttons: [
+                    
+                   
+                    {
+                      count: 1,
+                      label: "1m",
+                      step: "month",
+                      stepmode: "backward",
+                    },
+                    {
+                      count: 6,
+                      label: "6m",
+                      step: "month",
+                      stepmode: "backward",
+                    },
+
+                    { step: "all" },
+                  ],
+                },
+                rangeslider: {range: ['2015-02-17', '2017-02-16']},
+                type: "date",
+              },
+              yaxis: {
+                autorange: true,
+                type: "linear",
+                tickformat: "$.2f",
+              },
+            };
+
+            Plotly.newPlot("chart", data, layout);
+          });
+        }
+
+        updateChart("all");
+      });
+
+      document
+        .getElementById("openPopup")
+        .addEventListener("click", function () {
+          document.getElementById("popupForm").style.display = "block";
+        });
+
+      document
+        .getElementById("closePopup")
+        .addEventListener("click", function () {
+          document.getElementById("popupForm").style.display = "none";
+        });
+
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Get form data
+          const formData = new FormData(this);
+          const amount = formData.get("amount");
+          // const binanceId = formData.get("binanceId");
+
+          // Validate form data
+          if (isNaN(amount) || amount <= 0) {
+            alert("Please enter a valid amount.");
+            return;
+          }
+
+          // Perform API call - Replace this with your actual API endpoint
+          fetch("/addDeposit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              amount: amount,
+              coinId: coinvalue,
+              // binanceId: binanceId,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Handle response
+              console.log(data); // Log the response for demonstration
+              // You can update UI or do any other actions based on the response here
+              alert("Data submitted successfully!");
+              document.getElementById("popupForm").style.display = "none"; // Close the popup
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("An error occurred while submitting the data.");
+            });
+        });
+    </script>
+    <!-- End custom js for this page-->
+  </body>
+</html>
