@@ -1,6 +1,7 @@
 // services/thirdPartyApiService.js
 const axios = require('axios');
 
+const fetch = require('node-fetch');
 
 
 class ThirdPartyApiService {
