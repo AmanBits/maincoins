@@ -8,6 +8,8 @@ const Wallet = require("../controllers/walletController");
 const authMiddleware = require("../middleware/auth");
 const CoinDetails = require("../controllers/coinDetailController");
 const db = require("../db");
+const fetch = require('node-fetch');
+
 
 let topCoins = require("../services/topCoins");
 
