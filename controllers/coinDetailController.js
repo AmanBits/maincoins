@@ -1,5 +1,7 @@
 // controllers/CoinDetails.js
 const CoinDetailsModel = require("../models/coinDetailModel");
+const fetch = require('node-fetch');
+
 
 const fs = require("fs");
 const DashboardModel = require("../models/dashboardModel");
